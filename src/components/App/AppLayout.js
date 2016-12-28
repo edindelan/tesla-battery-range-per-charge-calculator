@@ -42,18 +42,15 @@ class App extends Component {
                     {models.map((model, index) => <ModelRange key={index} model={model} state={this.state}/>)}
                 </div>
                 <div className="selectors">
-                    <input type="range" step="5" min="45" max="70"
-                           value={this.state.speed}
-                           onChange={this.changeStats.bind(this)}/>
+                    <Selector
+                        state={this.state}
+                        min={45}
+                        max={70}
+                        step={5}
+                        increase={this.increase.bind(this)}
+                        decrease={this.decrease.bind(this)}
+                    />
                 </div>
-                <Selector
-                    state={this.state}
-                    min={45}
-                    max={70}
-                    step={5}
-                    increase={this.increase.bind(this)}
-                    decrease={this.decrease.bind(this)}
-                />
             </div>
         );
     }
