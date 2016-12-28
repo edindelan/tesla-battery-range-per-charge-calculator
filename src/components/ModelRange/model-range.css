@@ -1,0 +1,65 @@
+.stats {
+    position: relative;
+    width: 697px;
+    margin: 0 auto;
+    margin-top: -65px;
+}
+.stats .model-range-item {
+    display: inline-block;
+    width: 105px;
+    text-align: center;
+    margin: 0 5px
+}
+
+.stats .model-range-item .model-number {
+    width: 100%;
+    height: 15px;
+    background-size: auto 13px;
+    background-repeat:no-repeat;
+    background-position: center top;
+}
+
+.stats .model-range-item .range {
+    font-size: 40px;
+    font-weight: 300;
+    font-family: 'Roboto';
+    display: block;
+    padding: 0 18px 0 0;
+    position: relative;
+    color: #008dff;
+    text-align: right;
+}
+
+.stats .model-range-item .range:after {
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Roboto';
+    content: 'MI';
+    position: absolute;
+    top: 8px;
+    right: 0;
+}
+
+.stats .model-range-item .model-number.model-60 {
+    background-image: url('./models/60.svg');
+}
+
+.stats .model-range-item .model-number.model-60D {
+    background-image: url('./models/60d.svg');
+}
+
+.stats .model-range-item .model-number.model-75 {
+    background-image: url('./models/75.svg');
+}
+
+.stats .model-range-item .model-number.model-75D {
+    background-image: url('./models/75d.svg');
+}
+
+.stats .model-range-item .model-number.model-90D {
+    background-image: url('./models/90d.svg');
+}
+
+.stats .model-range-item .model-number.model-P100D {
+    background-image: url('./models/p100d.svg');
+}
