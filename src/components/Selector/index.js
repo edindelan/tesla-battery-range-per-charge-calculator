@@ -4,22 +4,24 @@ import './selector.css';
 export default class Selector extends Component {
 
     increase() {
-        console.log("PR", this.props);
-        this.props.increase(this.props.max, this.props.step);
+        this.props.increase(this.props.stateProperty, this.props.max, this.props.step);
     }
 
     decrease() {
-        this.props.decrease(this.props.min, this.props.step);
+        this.props.decrease(this.props.stateProperty, this.props.min, this.props.step);
     }
 
     render() {
-        console.log(this.props);
         return (
+        <div className="selector-container">
+            <div className="selector-name">{this.props.name}</div>
             <div className="selector-wrapper">
-                <div className="selector-value">{this.props.state.speed}<span className="metric">MPH</span></div>
-                <div className="button button-up" onClick={this.increase.bind(this)}>Up</div>
-                <div className="button button-down" onClick={this.decrease.bind(this)}>Down</div>
+                <div className="selector-value">{this.props.defaultValue}<span className="metric">{this.props.metric}</span></div>
+                <div className="button button-up" onClick={this.increase.bind(this)}></div>
+                <div className="seperator"></div>
+                <div className="button button-down" onClick={this.decrease.bind(this)}></div>
             </div>
+        </div>
         )
     }
 }

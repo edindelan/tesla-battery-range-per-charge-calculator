@@ -1,7 +1,85 @@
+.selectors {
+    margin-top: 20px;
+}
+
+.selector-container{
+    width: 190px;
+    float: left;
+    margin: 0 15px;
+}
+
+.selector-container .selector-name{
+    display: block;
+    text-align: left;
+    font-weight:100;
+    font-family: 'Roboto';
+    letter-spacing: 2px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
 .selector-wrapper {
-    border: 1px solid red;
-    width: 230px;
+    width: 100%;
+    height: 65px;
     float: left;
     position: relative;
+    background-color: #F7F7F7;
+    border: 1px solid #ccc;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.selector-wrapper .button {
+    height: 27px;
+    width: 27px;
+    position: absolute;
+    right: 10px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-position: center;
+    background-size: 60%;
+}
+
+.selector-wrapper .button.button-up {
+    background-image: url(./counter/up.svg);
+    top: 4px;
+}
+
+.selector-wrapper .button.button-down {
+    background-image: url('./counter/down.svg');
+    bottom: 4px;
+}
+
+.selector-wrapper .seperator {
+    width: 27px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #ccc;
+    top:0;
+    bottom:0;
+    position: absolute;
+    right: 10px;
+    margin: auto;
+    height: 2px;
+    box-sizing: border-box;
+}
+
+.selector-wrapper .selector-value {
+    display: inline-block;
+    font-family: 'Roboto';
+    font-size: 25px;
+    line-height: 62px;
+    font-weight: 400;
+    position: relative;
+    margin-left: 30px;
+ }
+
+.selector-wrapper .selector-value .metric{
+    position: absolute;
+    top: -4px;
+    left: 35px;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-family: inherit;
 }
 
