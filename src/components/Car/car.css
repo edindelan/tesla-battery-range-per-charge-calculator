@@ -1,0 +1,78 @@
+.car-container {
+    max-width: 1050px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.car-container .car-body {
+    width:100%;
+    min-width: 900px;
+    height:350px;
+    background-image: url('./assets/tesla.jpg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;
+}
+
+.car-container .car-body .tesla-wheels {
+    height: 247px;
+    width: 555px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.car-container .wheel {
+    height: 80px;
+    width: 80px;
+    bottom: 0;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+}
+
+.car-container .wheel.front {
+    background-image: url('./assets/wheel-21.png');
+    left: 53px;
+
+}
+.car-container .wheel.rear {
+    background-image: url('./assets/wheel-21.png');
+    right: 72px;
+}
+
+
+.car-container .wheel.speed-45 {
+    animation: rotate 800ms steps(6) infinite;
+}
+
+.car-container .wheel.speed-50 {
+    animation: rotate 600ms steps(6) infinite;
+}
+
+.car-container .wheel.speed-55 {
+    animation: rotate 400ms steps(6) infinite;
+}
+
+.car-container .wheel.speed-60 {
+    animation: rotate 300ms steps(6) infinite;
+}
+
+.car-container .wheel.speed-65 {
+    animation: rotate 200ms steps(6) infinite;
+}
+
+.car-container .wheel.speed-70 {
+    animation: rotate 100ms steps(6) infinite;
+}
+
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+

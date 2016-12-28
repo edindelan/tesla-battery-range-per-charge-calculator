@@ -1,6 +1,7 @@
 .stats {
     position: relative;
-    width: 697px;
+    max-width: 1050px;
+    min-width: 900px;
     margin: 0 auto;
     margin-top: -65px;
 }
@@ -8,7 +9,7 @@
     display: inline-block;
     width: 105px;
     text-align: center;
-    margin: 0 5px
+    margin: 0 10px
 }
 
 .stats .model-range-item .model-number {
@@ -21,13 +22,14 @@
 
 .stats .model-range-item .range {
     font-size: 40px;
-    font-weight: 300;
+    font-weight: 400;
     font-family: 'Roboto';
     display: block;
     padding: 0 18px 0 0;
     position: relative;
     color: #008dff;
     text-align: right;
+    margin-top: 5px;
 }
 
 .stats .model-range-item .range:after {
