@@ -2,7 +2,7 @@
   "name": "tesla-calculator",
   "version": "0.1.0",
   "private": true,
-  "entry point": "/build/index.html",
+  "entry point": "src/index.js",
   "devDependencies": {
     "react-scripts": "0.8.4"
   },
