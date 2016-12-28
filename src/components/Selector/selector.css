@@ -1,0 +1,7 @@
+.selector-wrapper {
+    border: 1px solid red;
+    width: 230px;
+    float: left;
+    position: relative;
+}
+
