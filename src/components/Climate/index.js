@@ -12,14 +12,12 @@ export default class Climate extends Component {
         const climate = this.props.state.climate;
         const temp = this.props.state.temperature;
 
-        temp <= 10
-            ? climateMode = climate === 'on' ? 'heat-on' : 'heat-off'
-            : climateMode = climate === 'on' ? 'ac-on' : 'ac-off';
+        temp <= 10 ? climateMode = 'heat' : climateMode = 'ac';
 
         return (
             <div className="climate-wrapper">
-                <div className={'circle ' + climateMode} onClick={this.climateSwitch.bind(this)}>
-                    <div className="label">Heat On</div>
+                <div className={'circle ' + climateMode + '-' + climate} onClick={this.climateSwitch.bind(this)}>
+                    <div className="label">{climateMode + ' ' + climate}</div>
                     <div className="icon"></div>
                 </div>
             </div>
