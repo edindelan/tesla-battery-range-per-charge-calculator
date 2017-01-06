@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import './climate.css';
 
-export default class Climate extends Component {
+class Climate extends Component {
 
     climateSwitch() {
         this.props.switchClimate();
@@ -24,3 +25,8 @@ export default class Climate extends Component {
         )
     }
 }
+
+export default connect(
+    state => ({state}),
+    dispatch => ({})
+)(Climate)

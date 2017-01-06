@@ -4,20 +4,21 @@ import Car from '../Car';
 import ModelRange from '../ModelRange';
 import Selector from '../Selector';
 import Climate from '../Climate';
+import {connect} from 'react-redux';
 
 const models = ['60', '60D', '75', '75D', '90D', 'P100D'];
 
 class App extends Component {
-    constructor(props) {
-        super(props);
+    /*constructor(props) {
+     super(props);
 
-        this.state = {
-            climate: 'on',
-            speed: 45,
-            temperature: 10,
-            wheel: '19'
-        }
-    }
+     this.state = {
+     climate: 'on',
+     speed: 45,
+     temperature: 10,
+     wheel: '19'
+     }
+     }*/
 
     increase(property, max, step) {
         if (this.state[property] >= max) return;
@@ -34,9 +35,10 @@ class App extends Component {
     }
 
     render() {
+        console.log(this.props.state);
         return (
             <div className="App">
-                <Car state={this.state}/>
+                <Car state={this.props.state}/>
                 <div className="stats">
                     {models.map((model, index) => <ModelRange key={index} model={model} state={this.state}/>)}
                 </div>
@@ -47,7 +49,7 @@ class App extends Component {
                         name={'Speed'}
                         min={45}
                         max={70}
-                        defaultValue={this.state.speed}
+                        defaultValue={this.props.state.speed}
                         metric={'MPH'}
                         step={5}
                         increase={this.increase.bind(this)}
@@ -56,11 +58,11 @@ class App extends Component {
 
                     <Selector
                         stateProperty={'temperature'}
-                        state={this.state}
+                        state={this.props.state}
                         name={'Outside Temperature'}
                         min={-10}
                         max={40}
-                        defaultValue={this.state.temperature}
+                        defaultValue={this.props.state.temperature}
                         metric={'°'}
                         step={10}
                         increase={this.increase.bind(this)}
@@ -76,4 +78,7 @@ class App extends Component {
     }
 }
 
-export default App;
+export default connect(
+    state => ({state}),
+    dispatch => ({})
+)(App);

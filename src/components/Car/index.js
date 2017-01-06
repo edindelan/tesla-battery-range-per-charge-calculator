@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 import './car.css';
 
-export default class Car extends Component {
+class Car extends Component {
     render() {
         return (
             <div className="car-container">
@@ -15,3 +16,8 @@ export default class Car extends Component {
         )
     }
 }
+
+export default connect(
+    state => ({state}),
+    dispatch => ({})
+)(Car)

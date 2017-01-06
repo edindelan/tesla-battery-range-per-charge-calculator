@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 import Stats from './stats';
 import './model-range.css';
 
-export default class ModelRange extends Component {
+class ModelRange extends Component {
+
     render() {
+        console.log(this);
+        //const m = this.props.model,
         const m = this.props.model,
               w = this.props.state.wheel,
               c = this.props.state.climate,
@@ -20,3 +24,8 @@ export default class ModelRange extends Component {
         )
     }
 }
+
+export default connect(
+    state => ({state}),
+    dispatch => ({})
+)(ModelRange)
