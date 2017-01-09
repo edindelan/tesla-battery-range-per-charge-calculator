@@ -7,10 +7,28 @@ const defaultState = {
 
 export default function (state = defaultState, action) {
     switch (action.type){
-        case 'SPEED_INCREASED':
+        case 'INCREASE_SELECTOR_VALUE':
+            const increasedSelectorValue = state[action.selectorType] + action.step;
+            if(increasedSelectorValue <= action.max){
+                return {
+                    ...state,
+                    [action.selectorType]: increasedSelectorValue
+                };
+            };
+            return state;
+        case 'DECREASE_SELECTOR_VALUE':
+            const decreasedSelectorValue = state[action.selectorType] - action.step;
+            if(decreasedSelectorValue >= action.min){
+                return {
+                    ...state,
+                    [action.selectorType]: decreasedSelectorValue
+                }
+            };
+            return state;
+        case 'SWITCH_CLIMATE':
             return {
                 ...state,
-                speed: this.state.speed + action.speed
+                climate: state.climate === 'on' ? 'off' : 'on'
             };
         default: return state;
     }

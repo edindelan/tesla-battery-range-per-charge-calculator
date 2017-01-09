@@ -1,23 +1,19 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {switchClimate} from '../../actions';
 import './climate.css';
 
 class Climate extends Component {
-
-    climateSwitch() {
-        this.props.switchClimate();
-    }
-
     render() {
         let climateMode = null;
-        const climate = this.props.state.climate;
-        const temp = this.props.state.temperature;
+        const {climate, temperature} = this.props.state;
 
-        temp <= 10 ? climateMode = 'heat' : climateMode = 'ac';
+        temperature <= 10 ? climateMode = 'heat' : climateMode = 'ac';
 
         return (
             <div className="climate-wrapper">
-                <div className={'circle ' + climateMode + '-' + climate} onClick={this.climateSwitch.bind(this)}>
+                <div className={'circle ' + climateMode + '-' + climate} onClick={() => this.props.switchClimate()}>
                     <div className="label">{climateMode + ' ' + climate}</div>
                     <div className="icon"></div>
                 </div>
@@ -26,7 +22,16 @@ class Climate extends Component {
     }
 }
 
-export default connect(
-    state => ({state}),
-    dispatch => ({})
-)(Climate)
+function mapPropsToState(state) {
+    return {
+        state
+    }
+}
+
+function mapDispatchToState(dispatch) {
+    return bindActionCreators({
+        switchClimate
+    }, dispatch)
+}
+
+export default connect(mapPropsToState, mapDispatchToState)(Climate)

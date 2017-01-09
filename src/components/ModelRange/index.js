@@ -6,8 +6,6 @@ import './model-range.css';
 class ModelRange extends Component {
 
     render() {
-        console.log(this);
-        //const m = this.props.model,
         const m = this.props.model,
               w = this.props.state.wheel,
               c = this.props.state.climate,
