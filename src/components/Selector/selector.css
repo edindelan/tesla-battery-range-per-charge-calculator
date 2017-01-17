@@ -1,11 +1,7 @@
-.selectors {
-    margin-top: 20px;
-}
-
 .selector-container{
     width: 190px;
     float: left;
-    margin: 0 15px;
+    margin-right: 30px;
 }
 
 .selector-container .selector-name{
@@ -27,6 +23,11 @@
     border: 1px solid #ccc;
     text-align: left;
     box-sizing: border-box;
+    outline: none;
+}
+
+.selector-wrapper.focused {
+    background-color: #eee;
 }
 
 .selector-wrapper .button {
@@ -38,6 +39,11 @@
     cursor: pointer;
     background-position: center;
     background-size: 60%;
+}
+
+.selector-wrapper .button.disabled {
+    opacity: 0.3;
+    cursor: no-drop;
 }
 
 .selector-wrapper .button.button-up {
@@ -75,11 +81,11 @@
 
 .selector-wrapper .selector-value .metric{
     position: absolute;
-    top: -4px;
     left: 35px;
     font-size: 15px;
     text-transform: uppercase;
     font-weight: 300;
     font-family: inherit;
+    line-height: 55px;
 }
 

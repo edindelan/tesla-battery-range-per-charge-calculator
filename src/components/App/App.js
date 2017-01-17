@@ -4,15 +4,12 @@ import Car from '../Car';
 import ModelRange from '../ModelRange';
 import Selector from '../Selector';
 import Climate from '../Climate';
+import Tires from '../Tires';
 import {connect} from 'react-redux';
 
 const models = ['60', '60D', '75', '75D', '90D', 'P100D'];
 
 class App extends Component {
-    /*switchClimate() {
-        this.setState({climate: this.state.climate === 'on' ? 'off' : 'on'})
-    }*/
-
     render() {
         return (
             <div className="App">
@@ -30,17 +27,19 @@ class App extends Component {
                         metric={'MPH'}
                         step={5}
                     />
-
-                    <Selector
-                        selectorType={'temperature'}
-                        name={'Outside Temperature'}
-                        value={this.props.state.temperature}
-                        min={-10}
-                        max={40}
-                        metric={'°'}
-                        step={10}
-                    />
-                    <Climate/>
+                    <div className="tesla-climate">
+                        <Selector
+                            selectorType={'temperature'}
+                            name={'Outside Temperature'}
+                            value={this.props.state.temperature}
+                            min={-10}
+                            max={40}
+                            metric={'°'}
+                            step={10}
+                        />
+                        <Climate/>
+                    </div>
+                    <Tires/>
                 </div>
             </div>
         );

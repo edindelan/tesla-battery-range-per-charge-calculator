@@ -6,24 +6,68 @@ import './selector.css';
 import {increaseSelectorValue, decreaseSelectorValue} from '../../actions';
 
 class Selector extends Component {
-    render() {
+    constructor(){
+        super();
+        this.state = {
+            focused: false
+        }
+    }
+    onFocus = () => {
+        this.setState({
+            focused: true
+        });
+
+    };
+
+    onBlur = () => {
+        this.setState({
+            focused: false
+        });
+
+    };
+
+    onKeyDown = (e) => {
+      const actionParams = this.getActionParams();
+      const keyCode = e.keyCode;
+
+      switch (keyCode) {
+          case 38:
+              this.props.increaseSelectorValue(actionParams);
+              return;
+          case 40:
+              this.props.decreaseSelectorValue(actionParams);
+              return;
+          default:
+              return
+      }
+    };
+
+    getActionParams = () => {
         const {min, max, step, selectorType} = this.props;
-        const actionParams = {
+        return {
             min,
             max,
             step,
             selectorType
         };
+    };
 
+    render() {
+        const actionParams = this.getActionParams();
+        const {value, name, metric, max, min} = this.props
+        const { focused } = this.state;
         return (
             <div className="selector-container">
-                <div className="selector-name">{this.props.name}</div>
-                <div className="selector-wrapper">
-                    <div className="selector-value">{this.props.value}<span
-                        className="metric">{this.props.metric}</span></div>
-                    <div className="button button-up" onClick={() => this.props.increaseSelectorValue(actionParams)}></div>
+                <div className="selector-name">{name}</div>
+                <div className={"selector-wrapper " + (focused ? 'focused' : '')} tabIndex="-1"
+                     onFocus={this.onFocus}
+                     onBlur={this.onBlur}
+                     onKeyDown={this.onKeyDown}>
+                    <div className="selector-value">{value}<span
+                        className="metric">{metric}</span></div>
+                    <div className={"button button-up " + (value === max ? 'disabled' : '')} onClick={() => this.props.increaseSelectorValue(actionParams)}></div>
                     <div className="seperator"></div>
-                    <div className="button button-down" onClick={() => this.props.decreaseSelectorValue(actionParams)}></div>
+                    <div className={"button button-down " + (value === min ? 'disabled' : '')} onClick={() => this.props.decreaseSelectorValue(actionParams)}></div>
                 </div>
             </div>
         )

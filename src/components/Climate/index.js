@@ -6,10 +6,10 @@ import './climate.css';
 
 class Climate extends Component {
     render() {
-        let climateMode = null;
+
         const {climate, temperature} = this.props.state;
 
-        temperature <= 10 ? climateMode = 'heat' : climateMode = 'ac';
+        const climateMode = temperature <= 10 ? 'heat' : 'ac';
 
         return (
             <div className="climate-wrapper">
