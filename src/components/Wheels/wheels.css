@@ -1,13 +1,13 @@
-.tires-container {
+.wheels-container {
     float: left;
     width: 355px;
 }
 
-.tires-container .tires-wrapper{
+.wheels-container .wheels-wrapper{
 
 }
 
-.tires-container .tires-wrapper .tires-component-name{
+.wheels-container .wheels-wrapper .wheels-component-name{
     display: block;
     text-align: left;
     font-weight: 100;
@@ -17,7 +17,7 @@
     margin-bottom: 10px;
 }
 
-.tires-container .tires-wrapper .tire-wrapper {
+.wheels-container .wheels-wrapper .wheel-wrapper {
     width: 47%;
     height: 65px;
     float: left;
@@ -32,12 +32,12 @@
     cursor: pointer;
 }
 
-.tires-container .tires-wrapper .tire-wrapper.selected {
+.wheels-container .wheels-wrapper .wheel-wrapper.selected {
     border-color: #39f;
     box-shadow: inset 0px 0px 0px 1px #39f;
 }
 
-.tires-container .tires-wrapper .tire-wrapper .tire-icon {
+.wheels-container .wheels-wrapper .wheel-wrapper .wheel-icon {
     width: 43px;
     height: 43px;
     margin-top: 10px;
@@ -47,16 +47,16 @@
     background-size: 100%;
 }
 
-.tires-container .tires-wrapper .tire-wrapper .tire-icon.tire-19 {
+.wheels-container .wheels-wrapper .wheel-wrapper .wheel-icon.wheel-19 {
     background-image: url('./assets/19.svg');
 }
 
-.tires-container .tires-wrapper .tire-wrapper .tire-icon.tire-21 {
+.wheels-container .wheels-wrapper .wheel-wrapper .wheel-icon.wheel-21 {
     background-image: url('./assets/21.svg');
 }
 
-.tires-container .tires-wrapper .tire-wrapper .tire-size {
-    font-size: 14px;
+.wheels-container .wheels-wrapper .wheel-wrapper .wheel-size {
+    font-size: 16px;
     float: right;
     line-height: 65px;
     padding-right: 61px;

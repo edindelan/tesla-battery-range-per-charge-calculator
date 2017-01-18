@@ -32,13 +32,19 @@
 }
 
 .car-container .wheel.front {
-    background-image: url('./assets/wheel-21.png');
     left: 53px;
 
 }
 .car-container .wheel.rear {
-    background-image: url('./assets/wheel-21.png');
     right: 72px;
+}
+
+.car-container .wheel.wheel-19 {
+    background-image: url('./assets/wheel-19.png');
+}
+
+.car-container .wheel.wheel-21 {
+    background-image: url('./assets/wheel-21.png');
 }
 
 

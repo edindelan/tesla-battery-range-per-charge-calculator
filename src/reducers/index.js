@@ -1,13 +1,14 @@
+import CONSTANTS from '../constants';
 const defaultState = {
     climate: 'on',
-    speed: 45,
+    speed: 55,
     temperature: 10,
-    wheel: '19'
+    wheel: 21
 };
 
 export default function (state = defaultState, action) {
     switch (action.type){
-        case 'INCREASE_SELECTOR_VALUE':
+        case CONSTANTS.INCREASE_SELECTOR_VALUE:
             const increasedSelectorValue = state[action.selectorType] + action.step;
             if(increasedSelectorValue <= action.max){
                 return {
@@ -16,7 +17,7 @@ export default function (state = defaultState, action) {
                 };
             };
             return state;
-        case 'DECREASE_SELECTOR_VALUE':
+        case CONSTANTS.DECREASE_SELECTOR_VALUE:
             const decreasedSelectorValue = state[action.selectorType] - action.step;
             if(decreasedSelectorValue >= action.min){
                 return {
@@ -25,10 +26,15 @@ export default function (state = defaultState, action) {
                 }
             };
             return state;
-        case 'SWITCH_CLIMATE':
+        case CONSTANTS.SWITCH_CLIMATE:
             return {
                 ...state,
                 climate: state.climate === 'on' ? 'off' : 'on'
+            };
+        case CONSTANTS.SWITCH_WHEELS:
+            return {
+                ...state,
+                wheel: action.size
             };
         default: return state;
     }

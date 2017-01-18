@@ -4,7 +4,7 @@ import Car from '../Car';
 import ModelRange from '../ModelRange';
 import Selector from '../Selector';
 import Climate from '../Climate';
-import Tires from '../Tires';
+import Wheels from '../Wheels';
 import {connect} from 'react-redux';
 
 const models = ['60', '60D', '75', '75D', '90D', 'P100D'];
@@ -13,9 +13,11 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <Car state={this.props.state}/>
+                <h1>Tesla Range per Charge Calculator</h1>
+                <h4>React / Redux</h4>
+                <Car />
                 <div className="stats">
-                    {models.map((model, index) => <ModelRange key={index} model={model} state={this.state}/>)}
+                    {models.map((model, index) => <ModelRange key={index} model={model}/>)}
                 </div>
                 <div className="selectors">
                     <Selector
@@ -39,7 +41,7 @@ class App extends Component {
                         />
                         <Climate/>
                     </div>
-                    <Tires/>
+                    <Wheels/>
                 </div>
             </div>
         );
