@@ -13,7 +13,7 @@ class Climate extends Component {
     }
 
     render() {
-        const {climate, temperature} = this.props.state;
+        const {climate, temperature} = this.props;
         const climateMode = temperature <= 10 ? 'heat' : 'ac';
         return (
             <div className="climate-wrapper">
@@ -30,7 +30,8 @@ class Climate extends Component {
 
 function mapPropsToState(state) {
     return {
-        state
+        climate: state.climate,
+        temperature: state.temperature
     }
 }
 

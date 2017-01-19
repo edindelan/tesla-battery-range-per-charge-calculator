@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     getModelData() {
         return {
             '60': {

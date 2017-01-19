@@ -1,4 +1,5 @@
 import CONSTANTS from '../constants';
+
 const defaultState = {
     climate: 'on',
     speed: 55,

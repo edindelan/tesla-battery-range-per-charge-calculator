@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300');
 
 *, :after, :before {
     box-sizing: border-box;
@@ -8,12 +8,15 @@
 }
 
 .App {
-  text-align: center;
+    text-align: center;
+    padding-bottom: 50px;
+    width: 990px;
+    margin: auto;
 }
 
-.App .tesla-climate{
-    border-left:1px solid #ccc;
-    border-right:1px solid #ccc;
+.App .tesla-climate {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
     float: left;
     padding: 0 30px;
     margin-right: 30px;
@@ -21,9 +24,74 @@
 
 .App .selectors {
     overflow: hidden;
-    max-width: 1040px;
-    margin: auto;
+    width: 100%;
     padding-bottom: 5px;
     padding-top: 5px;
     margin-top: 20px;
 }
+
+.App h1 {
+    font-size: 32px;
+    font-weight: 100;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    color: #666;
+    font-family: Roboto, sans-serif;
+}
+
+.App h4 {
+    font-size: 16px;
+    font-weight: 300;
+    color: #666;
+    font-family: Roboto, sans-serif;
+}
+
+.App .declaimer {
+    width: 990px;
+    font-size: 12px;
+    font-weight: 100;
+    display: inline-block;
+    text-align: left;
+    line-height: 18px;
+    margin: 0 auto;
+    margin-top: 10px;
+    color: #666;
+    font: 300 14px/1.4 Helvetica Neue, Helvetica, Arial, sans-serif;;
+}
+
+.App .source-link {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #999;
+    cursor: pointer;
+    font-family: Roboto;
+}
+
+.App .source-link:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

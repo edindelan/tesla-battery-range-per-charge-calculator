@@ -6,12 +6,9 @@ import './selector.css';
 import {increaseSelectorValue, decreaseSelectorValue} from '../../actions';
 
 class Selector extends Component {
-    constructor() {
-        super();
-        this.state = {
-            focused: false
-        }
-    }
+    state = {
+        focused: false
+    };
 
     onFocus = () => {
         this.setState({
@@ -79,12 +76,6 @@ class Selector extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        state
-    }
-}
-
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         increaseSelectorValue,
@@ -92,4 +83,4 @@ function mapDispatchToProps(dispatch) {
     }, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Selector);
+export default connect(null, mapDispatchToProps)(Selector);
