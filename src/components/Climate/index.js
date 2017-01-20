@@ -6,6 +6,8 @@ import './climate.css';
 
 class Climate extends Component {
     handleKeyDown = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         const key = e.keyCode;
         if(key === 32){
             this.props.switchClimate();

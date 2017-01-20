@@ -28,7 +28,6 @@
     margin: 8px auto 0;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url('./climate/ac-off.svg');
 }
 
 .climate-wrapper .circle.ac-on{
