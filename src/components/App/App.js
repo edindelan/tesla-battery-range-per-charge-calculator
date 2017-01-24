@@ -33,7 +33,7 @@ class App extends Component {
         return (
             <div className="App">
                 <h1>Tesla Range per Charge Calculator</h1>
-                <h4>React / Redux</h4>
+                {/*<h4>React / Redux</h4>*/}
                 <Car />
                 <div className="stats">
                     {models.map((model, index) => <ModelRange key={index} model={model}/>)}
@@ -50,7 +50,7 @@ class App extends Component {
                     The actual amount of range that you experience will vary based on your particular use conditions. See how particular use conditions may affect your range in our simulation model.
                     Vehicle range may vary depending on the vehicle configuration, battery age and condition, driving style and operating, environmental and climate conditions.
                 </span>
-                <a href="https://github.com/edindelan/tesla-battery-range-per-charge-calculator" className="source-link">Source code - GitHub</a>
+                {/*<a href="https://github.com/edindelan/tesla-battery-range-per-charge-calculator" className="source-link">Source code - GitHub</a>*/}
             </div>
         );
     }
